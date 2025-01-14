@@ -1,0 +1,38 @@
+body{
+    background-color: antiquewhite;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+}
+h3{
+    text-decoration: underline;
+}
+div{
+    background-color:rgb(198, 145, 60);
+    width: 40%;
+    margin-left: 30%;
+    text-align: center;
+}
+div.myPhoto{
+    background-color: antiquewhite;
+}
+div.skills {
+    text-align: center;
+  }
+  
+  ul.skill {
+    display: inline-block;
+    text-align: left;
+  }
+  img.myPhoto{
+    width: auto;
+  }
+img{
+    width: 50px;
+    height: auto;
+    background-color: antiquewhite;
+}
+
+img:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
