@@ -1,0 +1,30 @@
+/* h1{
+    color: #75c5ac;
+    background-color: rgb(9, 125, 115);
+} */
+ h1{
+    text-align: center;
+    /* /border-width: 3px;
+    border-style: dashed;
+    border-color: rgb(167, 149, 56);
+    border-radius: 10%; */
+    border: 3px dashed #4c4a4a;
+    margin: 10px 50px;
+    padding: 20px;
+    width: fit-content;
+ }
+ p{
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  
+    /* text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #ac5353; */
+
+    /* text-indent: 5%;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    line-height: 30px; */
+    text-shadow: 10px 10px 5px #4a4a4a;
+ }
