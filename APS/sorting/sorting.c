@@ -2,17 +2,24 @@
 #include<stdio.h>
 #include<ctype.h>
 #include<stdlib.h>
-#define N 6
 
-int* ascending(int a[]);
-int* descending(int a[]);
+void ascending(int a[],N);
+void descending(int a[],N);
 
 int main(){
-    int arr[N]={2,7,4,1,5,3};
     int i,choice;
     char try;
     
     lb:
+    printf("Enter the size of array:");
+    scanf("%d",&N);
+    int arr[N];
+    for (i = 0; i < N; i++)
+    {
+        printf("Enter element %d",i);
+        scanf("%d",&arr[i]);
+    }
+    
     printf("Enter the way of sorting:\n1)Bubble Sorting(Ascending)\n2)Bubble Sorting(Descending)\nChoice:");
     scanf("%d",&choice);
 
@@ -26,7 +33,8 @@ int main(){
         break;
     
     default:
-        printf("Invalid Choice");
+        printf("Invalid Choice\n");
+        exit(0);
         break;
     }
     
@@ -49,7 +57,7 @@ int main(){
 
     return 0;
 }
-int* ascending(int a[]){
+void ascending(int a[],N){
     int t,i,j;
     for ( i = 0; i < N; i++)
     {
@@ -65,9 +73,9 @@ int* ascending(int a[]){
         }
         
     }
-    return a;
+    
 }
-int* descending(int a[]){
+void descending(int a[],N){
     int t,i,j;
     for ( i = 0; i < N; i++)
     {
@@ -83,5 +91,5 @@ int* descending(int a[]){
         }
         
     }
-    return a;
+    
 }
