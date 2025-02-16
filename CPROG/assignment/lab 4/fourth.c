@@ -5,32 +5,27 @@
 */
 #include<stdio.h>
 
-
 int main(){ 
-    int searchItem,arr[],N,a,temp;
+    int N,temp,i,j;
 
     printf("Enter the number of elements in array:");
     scanf("%d",&N);
+    int a[N];
 
-    printf("Enter 5 elements in the array:");
+    printf("Enter %d elements in the array:",N);
     for(i=0;i<N;i++){
-        scanf("%d",&arr[i]);       
+        scanf("%d",&a[i]);       
     }
-
-    printf("Enter the element you are searching for:");
-    scanf("%d",&searchItem);
 
     for(i=0;i<N-1;i++){
 		for(j=i+1;j<N;j++){
 			if(a[i]>a[j]){
-				temp=a[i];
-				a[i]=a[j];
-				a[j]=temp;
+				temp=a[i],a[i]=a[j],a[j]=temp;
 			}
 		}
 	}
-    printf("The smallest element is %d",arr[0]);
-    printf("\nThe largest element is %d",arr[N-1]);
+    printf("The smallest element is %d",a[0]);
+    printf("\nThe largest element is %d",a[N-1]);
     
     return 0;
 }

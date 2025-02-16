@@ -14,14 +14,14 @@ int main(){
         scanf("%d",&arr[i]);
     }
 
-    printf("Original order");
+    printf("Original order:");
     for (i = 0; i < num; i++)
     {
         printf("%d ",arr[i]);
     }
 
 
-    printf("\nReversed order of elements");
+    printf("\nReversed order of elements:");
     for (i = num-1; i >=0; i--)
     {
         printf("%d ",arr[i]);

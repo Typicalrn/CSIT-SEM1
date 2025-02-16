@@ -25,18 +25,15 @@ int main(){
     }
 
     printf("\nEnter the element that need to be searched:");
+    scanf("%d",&searchItem);
     
     result=linearSearch(searchItem,arr);
-    printf("%d",result);
     if(result==-1){
         printf("Sorry! Element not found.");
     }
-    else if(result!=-1){
+    else {
         printf("Element is found at %d",result);
     }
     
-
-    
-
     return 0;
 }

@@ -24,7 +24,7 @@ int main(){
     printf("The sum of elements of the array is %d",sum);
 
     avg=(float)sum/n;
-    printf("The average of elements of the array is %.2f",avg);
+    printf("\nThe average of elements of the array is %.2f",avg);
     
 
     return 0;

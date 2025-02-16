@@ -1,4 +1,5 @@
 //8. Perform addition, subtraction, and multiplication of two 2D arrays (matrices).#include <stdio.h>
+#include<stdio.h>
 
 int main() {
     int rows, cols;
@@ -14,8 +15,7 @@ int main() {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             scanf("%d", &A[i][j]);
-        }
-    }
+        }}
 
     // Input elements of matrix B
     printf("Enter elements of matrix B:\n");
