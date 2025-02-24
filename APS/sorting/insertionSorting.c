@@ -4,57 +4,52 @@
 
 
 void ascending(int a[],int N){
-    int t,i,j,min;
-    for ( i = 0; i < N; i++)
+    int i,temp,hole;
+    for ( i = 1; i < N; i++)
     {
-        min=i;
-        for ( j = i+1; j < N; j++)
+        temp=a[i];
+        hole=i;
+        while (hole>0 && a[hole-1]> temp)
         {
-            if (a[j]<a[min])
-            {
-                min=j;
-            }
+            a[hole]=a[hole-1];
+            hole=hole-1;
             
         }
-        t=a[min];
-        a[min]=a[i];
-        a[i]=t;
-        
-    }
-}
-void descending(int a[],int N){
-    int t,i,j,min;
-    for ( i = 0; i < N; i++)
-    {
-        min=i;
-        for ( j = i+1; j < N; j++)
-        {
-            if (a[j]>a[min])
-            {
-                min=j;
-            }
-            
-        }
-        t=a[min];
-        a[min]=a[i];
-        a[i]=t;
-        
+        a[hole]=temp; 
     }
 }
 
+void descending(int a[],int N){
+    int i,temp,hole;
+    for ( i = 1; i < N; i++)
+    {
+        temp=a[i];
+        hole=i;
+        while (hole>0 && a[hole-1]< temp)
+        {
+            a[hole]=a[hole-1];
+            hole=hole-1;
+            
+        }
+        a[hole]=temp; 
+    }
+}
+
+
 int main(){
-    int i,choice,N;
+    int j,choice,N;
     char try;
     
     lb:
     printf("Enter the size of array:");
     scanf("%d",&N);
     int arr[N];
-    for (i = 0; i < N; i++)
+    for (j = 0; j < N; j++)
     {
-        printf("Enter element %d:",i);
-        scanf("%d",&arr[i]);
+        printf("Enter element %d:",j);
+        scanf("%d",&arr[j]);
     }
+
     printf("Enter the way of sorting:\n1)Selection Sorting(Ascending)\n2)Selection Sorting(Descending)\nChoice:");
     scanf("%d",&choice);
 
@@ -73,10 +68,9 @@ int main(){
         break;
     }
     
-
-    for ( i = 0; i < N; i++)
+    for ( j = 0; j < N; j++)
     {
-        printf("%d \t",arr[i]);
+        printf("%d \t",arr[j]);
     }
     printf("\n");
 
