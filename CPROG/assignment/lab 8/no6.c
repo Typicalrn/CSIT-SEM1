@@ -4,7 +4,7 @@
 #include <string.h>
 
 int main() {
-    const char *filename = "datatype.txt"; // Specify the file name
+    const char *filename = "data.txt"; // Specify the file name
     FILE *file;
     char input[256]; // Buffer to hold user input
 

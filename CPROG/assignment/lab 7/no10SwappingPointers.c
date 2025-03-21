@@ -8,12 +8,10 @@ void swapPointers(int **ptr1, int **ptr2) {
 }
 
 int main() {
-    int a = 10;
-    int b = 20;
+    int a = 10,b = 20;
 
     // Create pointers to the variables
-    int *ptrA = &a;
-    int *ptrB = &b;
+    int *ptrA = &a,*ptrB = &b;
 
     // Print original pointers and their values
     printf("Before swapping:\n");

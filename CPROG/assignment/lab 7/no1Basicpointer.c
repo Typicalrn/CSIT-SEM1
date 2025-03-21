@@ -10,8 +10,5 @@ int main(){
     printf("\nshow address of num:%d",*ptr2);
     printf("\nshow numerical value:%d",**ptr2);    
     printf("\nshow address of ptr:%d",ptr2);
-
-
-
     return 0;
 }

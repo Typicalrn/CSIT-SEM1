@@ -10,7 +10,7 @@ int main() {
 
     // Check if the file was opened successfully
     if (file == NULL) {
-        printf("Error opening file 'data.txt'!\n");
+        printf("Error opening file!");
         return 1; // Exit the program with an error code
     }
 

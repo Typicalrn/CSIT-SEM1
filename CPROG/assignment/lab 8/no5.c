@@ -3,19 +3,17 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-void countFileContents(const char *filename, int *charCount, int *wordCount, int *lineCount) {
+void count(const char *filename, int *charCount, int *wordCount, int *lineCount) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
-        perror("Error opening file");
-        exit(EXIT_FAILURE);
+        printf("Error!");
+        exit(1);
     }
 
     int c;
     int inWord = 0;
 
-    *charCount = 0;
-    *wordCount = 0;
-    *lineCount = 0;
+    *charCount = 0;*wordCount = 0;*lineCount = 0;
 
     while ((c = fgetc(file)) != EOF) {
         (*charCount)++;
@@ -43,14 +41,14 @@ void countFileContents(const char *filename, int *charCount, int *wordCount, int
 }
 
 int main() {
-    const char *filename = "datatype.txt"; // Specify the file name
+    const char *filename = "data.txt"; // Specify the file name
     int charCount, wordCount, lineCount;
 
-    countFileContents(filename, &charCount, &wordCount, &lineCount);
+    count(filename, &charCount, &wordCount, &lineCount);
 
     printf("Characters: %d\n", charCount);
     printf("Words: %d\n", wordCount);
     printf("Lines: %d\n", lineCount);
 
-    return EXIT_SUCCESS;
+    return 0;
 }

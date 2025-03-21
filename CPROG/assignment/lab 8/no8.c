@@ -2,48 +2,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_STUDENTS 100
+#define MAX_STDS 100
 #define NAME_LENGTH 50
 
-typedef struct {
-    char name[NAME_LENGTH];
-    int rollNumber;
-    float marks;
-} Student;
+// Define a struct to represent a student
+struct Student {
+char name[NAME_LENGTH];
+int roll;
+float marks;
+};
 
-void readStudentsFromFile(const char *filename, Student students[], int *count) {
-    FILE *file = fopen(filename, "r");
-    if (file == NULL) {
-        perror("Error opening file");
-        exit(EXIT_FAILURE);
-    }
-
-    *count = 0;
-    while (fscanf(file, "%49s %d %f", students[*count].name, &students[*count].rollNumber, &students[*count].marks) == 3) {
-        (*count)++;
-        if (*count >= MAX_STUDENTS) {
-            break; // Prevent overflow
-        }
-    }
-
-    fclose(file);
+// Function to read student details from a file
+void read(const char *filename, struct Student students[], int *count) {
+FILE *file = fopen(filename, "r");
+if (file == NULL) {
+perror("Error opening file");
+exit(EXIT_FAILURE);
 }
 
-void displayStudents(const Student students[], int count) {
-    printf("\n%-20s %-15s %-10s\n", "Name", "Roll Number", "Marks");
-    printf("---------------------------------------------------\n");
-    for (int i = 0; i < count; i++) {
-        printf("%-20s %-15d %-10.2f\n", students[i].name, students[i].rollNumber, students[i].marks);
-    }
+*count = 0;
+while (fscanf(file, "%49s %d %f", students[*count].name, &students[*count].roll, &students[*count].marks) == 3) {
+(*count)++;
+if (*count >= MAX_STDS) {
+break; // Prevent overflow
+}
+}
+
+fclose(file);
+}
+
+// Function to display student details
+void display(const struct Student students[], int count) {
+printf("\n%-20s %-15s %-10s\n", "Name", "Roll Number", "Marks");
+printf("---------------------------------------------------\n");
+for (int i = 0; i < count; i++) {
+]
+}
 }
 
 int main() {
-    const char *filename = "students.txt"; // Specify the file name
-    Student students[MAX_STUDENTS];
-    int count;
+const char *filename = "students.txt"; // Specify the file name
+struct Student students[MAX_STDS];
+int count;
 
-    readStudentsFromFile(filename, students, &count);
-    displayStudents(students, count);
+// Read student details from the file
+read(filename, students, &count);
 
-    return EXIT_SUCCESS;
+// Display student details
+display(students, count);
+
+return EXIT_SUCCESS;
 }

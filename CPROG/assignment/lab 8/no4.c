@@ -2,48 +2,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void copyFile(const char *sourceFile, const char *destFile) {
-    FILE *src, *dest;
+void copyFile(const char *src, const char *dest) {
+    FILE *src,*dest;
     char ch;
-
     // Open the source file in read mode
-    src = fopen(sourceFile, "r");
+    src = fopen(src, "r");
     if (src == NULL) {
-        printf("Error opening source file '%s'!\n", sourceFile);
+        printf("Error!\n");
         exit(1);
     }
-
     // Open the destination file in write mode
-    dest = fopen(destFile, "w");
+    dest = fopen(dest, "w");
     if (dest == NULL) {
-        printf("Error opening destination file '%s'!\n", destFile);
+        printf("Error!\n");
         fclose(src); // Close the source file before exiting
         exit(1);
     }
-
     // Copy the contents from source to destination
     while ((ch = fgetc(src)) != EOF) {
         fputc(ch, dest);
     }
-
     // Close both files
     fclose(src);
     fclose(dest);
-
-    printf("Contents copied from '%s' to '%s' successfully.\n", sourceFile, destFile);
+    printf("Contents copied from '%s' to '%s' successfully.\n", src, dest);
 }
 
 int main() {
-    char sourceFile[100], destFile[100];
-
+    char src[100], dest[100];
     // Ask the user for the source and destination file names
     printf("Enter the source file name: ");
-    scanf("%s", sourceFile);
+    scanf("%s", src);
     printf("Enter the destination file name: ");
-    scanf("%s", destFile);
-
+    scanf("%s", dest);
     // Call the copy function
-    copyFile(sourceFile, destFile);
-
+    copyFile(src, dest);
     return 0;
 }

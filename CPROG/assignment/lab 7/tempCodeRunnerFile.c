@@ -1,0 +1,1 @@
+Create a function that takes a pointer to an integer and modifies its value inside the function.
